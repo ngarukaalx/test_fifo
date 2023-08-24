@@ -14,6 +14,12 @@ void execute(stack_t **stack, char *opcode, unsigned int numline)
 	instruction_t instructions[] = {
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
+		{"my_div", my_div},
 	};
 
 	for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
@@ -24,7 +30,7 @@ void execute(stack_t **stack, char *opcode, unsigned int numline)
 			return;
 		}
 	}
-	fprintf(stderr, "L%u : unknown instruction %s\n", numline, opcode);
+	fprintf(stderr, "L%u: unknown instruction %s\n", numline, opcode);
 	_free(*stack);
 	exit(EXIT_FAILURE);
 }

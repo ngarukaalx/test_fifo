@@ -1,6 +1,43 @@
 #include "monty.h"
 
 /**
+ * _push - fuction name
+ * @str_value: parameter
+ * @numberline: parameter
+ */
+
+void _push(const char *str_value, int numberline)
+{
+	const char *ptr = str_value;
+
+	if (*ptr == '-')
+	{
+		ptr++;
+	}
+	else if (*ptr < '0' || *ptr > '9')
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", numberline);
+		exit(EXIT_FAILURE);
+	}
+	if (str_value == NULL)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", numberline);
+		exit(EXIT_FAILURE);
+	}
+	while (*ptr != '\0')
+	{
+		if (*ptr < '0' || *ptr > '9')
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", numberline);
+			exit(EXIT_FAILURE);
+		}
+		ptr++;
+	}
+
+
+}
+
+/**
  * push - fuction name
  * @stack: param
  * @str_value: parameter
@@ -20,22 +57,8 @@ void push(stack_t **stack, const char *str_value, int numberline)
 		write(2, "Error: malloc failed\n", 21);
 		exit(EXIT_FAILURE);
 	}
+	_push(ptr, numberline);
 
-	if (str_value == NULL)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", numberline);
-		exit(EXIT_FAILURE);
-	}
-
-	while (*ptr != '\0')
-	{
-		if (*ptr < '0' || *ptr > '9')
-		{
-			fprintf(stderr, "L%u: usage: push integer\n", numberline);
-			exit(EXIT_FAILURE);
-		}
-		ptr++;
-	}
 	value = atoi(str_value);
 
 	newnode->n = value;

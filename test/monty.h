@@ -41,7 +41,13 @@ typedef struct instruction_s
 int main(int argc, char *argv[]);
 void pint(stack_t **stack, unsigned int numberline);
 void _free(stack_t *stack);
+void pop(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, const char *str_value, int numberline);
 void pall(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void my_div(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 void execute(stack_t **stack, char *opcode, unsigned int numline);
 #endif
