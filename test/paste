@@ -1,0 +1,10 @@
+#include "monty.h"
+
+/**
+ * pstr - multiplies the second top element of the stack
+ * with the top element of the stack
+ * @stack: pointer to top
+ * @line_number: linenumber
+ */
+
+void pstr(stack_t **stack, unsigned int line_number)
