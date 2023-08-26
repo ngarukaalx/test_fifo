@@ -19,11 +19,11 @@ void rotl(stack_t **stack, unsigned int line_number)
 		{
 			temp = temp->next;
 		}
-		 temp->next = *stack;
-		 (*stack)->prev = temp;
-		 *stack = (*stack)->next;
-		 (*stack)->prev->next = NULL;
-		 (*stack)->next = NULL;
+		temp->next = *stack;
+		(*stack)->prev = temp;
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+		temp->next->next = NULL;
 	}
 
 }

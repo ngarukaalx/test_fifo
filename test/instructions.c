@@ -24,7 +24,8 @@ void execute(stack_t **stack, char *opcode, unsigned int numline)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
-		{"rotl", rotl}
+		{"rotl", rotl},
+		{"rotr", rotr}
 	};
 
 	for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
