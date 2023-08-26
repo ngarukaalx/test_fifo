@@ -23,7 +23,8 @@ void execute(stack_t **stack, char *opcode, unsigned int numline)
 		{"mul", mul},
 		{"mod", mod},
 		{"pchar", pchar},
-		{"pstr", pstr}
+		{"pstr", pstr},
+		{"rotl", rotl}
 	};
 
 	for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
